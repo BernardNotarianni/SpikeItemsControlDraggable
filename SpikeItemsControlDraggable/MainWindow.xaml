@@ -13,50 +13,19 @@
     <StackPanel>
         <Button Content="Add1" Click="Add1_OnClick"/>
         <Button Content="Add2" Click="Add2_OnClick"/>
-        <local:PostitItemsControl Margin="10" ItemsSource="{Binding Source={StaticResource DataList1}}"/>
-        <local:PostitItemsControl Margin="10" ItemsSource="{Binding Source={StaticResource DataList2}}"/>
+
+        <local:PostitItemsControl
+            local:DragDropHelper.IsDropTarget="true"
+            local:DragDropHelper.IsDragSource="true"
+            Margin="10" 
+            ItemsSource="{Binding Source={StaticResource DataList1}}"/>
         
-        <!--<ItemsControl Margin="10" ItemsSource="{Binding Source={StaticResource DataList}}">
-            
-            <ItemsControl.Template>
-                <ControlTemplate TargetType="ItemsControl">
-                    <Border BorderBrush="CadetBlue" BorderThickness="1" >
-                        <ItemsPresenter/>
-                    </Border>
-                </ControlTemplate>
-            </ItemsControl.Template>
-            
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <DataTemplate.Resources>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="FontSize" Value="18"/>
-                            <Setter Property="HorizontalAlignment" Value="Center"/>
-                        </Style>
-                    </DataTemplate.Resources>
-                    <Grid>
-                        <Ellipse Fill="Silver"/>
-                        <StackPanel>
-                            <TextBlock Margin="3,3,3,0" Text="{Binding Path=Priority}"/>
-                            <TextBlock Margin="3,0,3,7" Text="{Binding Path=TaskName}"/>
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-
-            <ItemsControl.ItemContainerStyle>
-                <Style>
-                    <Setter Property="Control.Width" Value="100"/>
-                    <Setter Property="Control.Margin" Value="5"/>
-                </Style>
-            </ItemsControl.ItemContainerStyle>
-        </ItemsControl>-->
+        <local:PostitItemsControl
+            local:DragDropHelper.IsDropTarget="true"
+            local:DragDropHelper.IsDragSource="true"
+            Margin="10"
+            ItemsSource="{Binding Source={StaticResource DataList2}}"/>  
+        
     </StackPanel>
    
 </MahApps:MetroWindow>
