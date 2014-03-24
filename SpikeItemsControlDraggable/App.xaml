@@ -11,8 +11,58 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-            </ResourceDictionary.MergedDictionaries>           
-        </ResourceDictionary>
-        
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="local:PostitItemsControl">
+                
+                <Setter Property="ItemsPanel">
+                    <Setter.Value>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </Setter.Value>
+                </Setter>
+                
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="local:PostitItemsControl">
+                            <Border BorderBrush="CadetBlue" BorderThickness="1" >
+                                <ItemsPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="ItemTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <DataTemplate.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="18"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                </Style>
+                            </DataTemplate.Resources>
+                            <Grid>
+                                <Ellipse Fill="Silver"/>
+                                <StackPanel>
+                                    <TextBlock Margin="3,3,3,0" Text="{Binding Path=Priority}"/>
+                                    <TextBlock Margin="3,0,3,7" Text="{Binding Path=TaskName}"/>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </Setter.Value>                  
+                </Setter>
+
+                <Setter Property="ItemContainerStyle">
+                    <Setter.Value>
+                        <Style>
+                            <Setter Property="Control.Width" Value="100"/>
+                            <Setter Property="Control.Margin" Value="5"/>
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>        
     </Application.Resources>
 </Application>

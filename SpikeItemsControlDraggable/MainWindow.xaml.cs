@@ -45,10 +45,16 @@ namespace SpikeItemsControlDraggable
             InitializeComponent();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void Add1_OnClick(object sender, RoutedEventArgs e)
         {
-            var dataList = (MyData) FindResource("DataList");
+            var dataList = (MyData) FindResource("DataList1");
             dataList.Add(new Task {Priority = 3, TaskName = "tutu", Description = "un truc"});
+        }
+
+        private void Add2_OnClick(object sender, RoutedEventArgs e)
+        {
+            var dataList = (MyData)FindResource("DataList2");
+            dataList.Add(new Task { Priority = 3, TaskName = "trtr", Description = "un truc" });
         }
     }
 }
