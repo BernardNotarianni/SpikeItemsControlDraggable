@@ -1,0 +1,6 @@
+
+Articles
+
+Customiser un itemspanel pour le remplacer par un wrappanel
+http://www.codeproject.com/Articles/18561/Custom-ListBox-Layout-in-WPF
+
