@@ -44,5 +44,11 @@ namespace SpikeItemsControlDraggable
         {
             InitializeComponent();
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var dataList = (MyData) FindResource("DataList");
+            dataList.Add(new Task {Priority = 3, TaskName = "tutu", Description = "un truc"});
+        }
     }
 }
