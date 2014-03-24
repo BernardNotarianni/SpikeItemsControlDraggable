@@ -14,8 +14,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <Style TargetType="local:PostitItemsControl">
-
-
+                
                 <Setter Property="ItemsPanel">
                     <Setter.Value>
                         <ItemsPanelTemplate>
