@@ -13,6 +13,28 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
+            <Style TargetType="local:PostitContentControl">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <DataTemplate.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="18"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                </Style>
+                            </DataTemplate.Resources>
+                            <Grid>                                
+                                <Ellipse Fill="Silver"/>
+                                <StackPanel>
+                                    <TextBlock Margin="3,3,3,0" Text="{Binding Path=Priority}"/>
+                                    <TextBlock Margin="3,0,3,7" Text="{Binding Path=TaskName}"/>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
             <Style TargetType="local:PostitItemsControl">
                 
                 <Setter Property="ItemsPanel">
@@ -36,19 +58,7 @@
                 <Setter Property="ItemTemplate">
                     <Setter.Value>
                         <DataTemplate>
-                            <DataTemplate.Resources>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="FontSize" Value="18"/>
-                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                </Style>
-                            </DataTemplate.Resources>
-                            <Grid>
-                                <Ellipse Fill="Silver"/>
-                                <StackPanel>
-                                    <TextBlock Margin="3,3,3,0" Text="{Binding Path=Priority}"/>
-                                    <TextBlock Margin="3,0,3,7" Text="{Binding Path=TaskName}"/>
-                                </StackPanel>
-                            </Grid>
+                            <local:PostitContentControl Content="{Binding}"/>
                         </DataTemplate>
                     </Setter.Value>                  
                 </Setter>
@@ -56,7 +66,7 @@
                 <Setter Property="ItemContainerStyle">
                     <Setter.Value>
                         <Style>
-                            <Setter Property="Control.Width" Value="100"/>
+                            <Setter Property="Control.Width" Value="100"/>                            
                             <Setter Property="Control.Margin" Value="5"/>
                         </Style>
                     </Setter.Value>
